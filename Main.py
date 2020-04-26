@@ -3,7 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 #main Code
-
 Sales_Price = float(input('Enter sales price of property in US dollars: '))
 Down_Payment =  float(input('Enter down payment as a percentage of Sales Price, e.g. 7 for 7%: '))
 Loan_Amount = Sales_Price*(1-Down_Payment/100)
@@ -19,7 +18,6 @@ for i in range(1,Loan_Term+1):
     Loan_Amount = Loan_Amount - (X-Interest)
     Monthly_Interest = np.append(Monthly_Interest,Interest)
     Monthly_Balance = np.append(Monthly_Balance, Loan_Amount)
-
 #print useful outputs
 print("The Home Sales Price is: = " + str('$')+ str(Sales_Price))
 print("The Down Payment as a Percentage of Sales Price is: = " + str(Down_Payment)+str(' %'))
@@ -27,7 +25,7 @@ print("The Loan Amount is: = " + str(Sales_Price*(1-Down_Payment/100))+str(' %')
 print("The Interest Rate on Annual Percentage Basis is: = " + str(Interest_Rate)+str(' %'))
 print("The duration of this loan, that is the Loan Term (in months) is: = " + str(Loan_Term)+str(' months'))
 print("Monthly Payment for this Mortgage(P & I) is: = " + str('$')+str(np.round(X,2)))
-print("Total interest paid over life cycle of the loan is: = " + str('$') + str(np.round(np.sum(Monthly_Interest),2)))
+print("Total interest paid over life of the loan is: = " + str('$') + str(np.round(np.sum(Monthly_Interest),2)))
 
 #prouduce visualization of monthly loan balance and interest
 plt.plot(range(1,Loan_Term+1),Monthly_Interest, 'r',lw=2)
